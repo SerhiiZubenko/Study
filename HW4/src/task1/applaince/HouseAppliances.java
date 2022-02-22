@@ -1,8 +1,9 @@
 package task1.applaince;
 
+
 import task1.House;
 
-public class HouseAppliances extends HomeAppliances implements House {
+public class HouseAppliances extends BaseAppliances implements House {
 
     private String energyEfficiencyLevel;
 

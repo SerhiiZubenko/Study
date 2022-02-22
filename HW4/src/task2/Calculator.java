@@ -1,16 +1,14 @@
 package task2;
 
-import static org.w3c.dom.events.MutationEvent.ADDITION;
+import java.io.IOException;
 
-public class Calculator {
+public class Calculator extends Operations{
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        Operations operation = Operations.ADDITION;
-        operation.action(3, 5);
-        operation = Operations.DIVIDING;
-        operation.action(12, 3);
+        Calculator calculator = new Calculator();
+        calculator.calculate();
 
     }
 }

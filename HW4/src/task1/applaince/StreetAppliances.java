@@ -2,7 +2,7 @@ package task1.applaince;
 
 import task1.Street;
 
-public class StreetAppliances extends HomeAppliances implements Street {
+public class StreetAppliances extends BaseAppliances implements Street {
 
     private String levelOfProtection;
 

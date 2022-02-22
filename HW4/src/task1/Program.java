@@ -1,18 +1,20 @@
 package task1;
 
-import task1.applaince.HomeAppliances;
+
+import task1.applaince.BaseAppliances;
 import task1.applaince.HouseAppliances;
 import task1.applaince.StreetAppliances;
 
 import java.util.Arrays;
 
-import static task1.applaince.HomeAppliances.powerOfTheIncludedDevices;
+import static task1.applaince.BaseAppliances.powerOfTheIncludedDevices;
+
 
 public class Program {
 
     public static void main(String[] args) {
 
-        HomeAppliances[] arr = new HomeAppliances[4];
+        BaseAppliances[] arr = new BaseAppliances[4];
         arr[0] = new HouseAppliances("Phone",
                 "Lenovo", 50, 220, true, "A+");
         arr[1] = new StreetAppliances("Lighting",
@@ -24,13 +26,13 @@ public class Program {
 
         System.out.println("Result =" + powerOfTheIncludedDevices(arr));
 
-        Integer[] sortArr = HomeAppliances.sortPowerFull(arr);
+        Integer[] sortArr = BaseAppliances.sortPowerFull(arr);
 
         for ( Integer i : sortArr) {
             System.out.println(i);
         }
 
-        HomeAppliances.findOfAppliances(arr, 0, 1600);
+        BaseAppliances.findOfAppliances(arr, 0, 1600);
 
     }
 }
