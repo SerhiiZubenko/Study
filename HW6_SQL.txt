@@ -1,0 +1,269 @@
+1. Update the Employees table, so it contains the HireDate values from 2017 till the current (2021) year.
+
+UPDATE employees
+SET HireDate = DATE_ADD(HireDate, INTERVAL 3 YEAR);
+
+2. Delete records from the Products table which weren't ordered. 
+
+DELETE FROM Products 
+WHERE UnitsOnOrder = 0 ; ------------------------ doesn't work
+
+3. Get the list of data about employees: First Name, Last Name, Title, Hire Date who was hired this year (2021).
+
+SELECT 
+    FirstName, LastName, Title
+
+FROM
+    employees 
+
+WHERE
+    EXTRACT(YEAR FROM HireDate) = 2021;
+
+4. Find quantity of employees in each department. Note: Departments is the same as a title in the Employees table 
+
+SELECT DISTINCT
+    
+Title AS Departament, COUNT(Title) AS quantity
+
+FROM
+    Employees
+ 
+GROUP BY Title;
+
+5. Get the list of suppliers, which are located in USA and have a specified region.
+
+SELECT 
+    CompanyName, Region
+
+FROM
+    suppliers
+
+WHERE
+    Country = 'USA' AND Region != 'NULL'; 
+
+6. Get the amount of products that were delivered by each supplier (company), which have a discount from the Unit Price more than 10%. 
+   Where record are represented from the biggest to lowest discount.
+
+SELECT 
+    p.SupplierID, s.CompanyName, SUM(o.Quantity) AS Count
+
+FROM
+    products p
+        
+INNER JOIN
+    `order details` o ON p.ProductID = o.ProductID
+        
+INNER JOIN
+    suppliers s ON p.SupplierID = s.SupplierID
+
+WHERE
+    o.Discount > 0.1
+
+GROUP BY p.SupplierID
+
+ORDER BY SUM(o.Discount) DESC;
+
+7. Get the top five product categories with the list of the most buyable products in Germany.
+
+SELECT DISTINCT
+    p.ProductName, s.Country
+
+FROM
+    products p
+        
+INNER JOIN
+    suppliers s ON p.SupplierID = s.SupplierID
+        
+INNER JOIN
+    `order details` o ON p.ProductID = o.ProductID
+
+WHERE
+    s.Country = 'Germany'
+
+ORDER BY o.Quantity DESC
+
+LIMIT 5;
+
+8. Get the First Name, Last Name and Title of Managers and their subordinates.
+
+SELECT 
+ 
+ e1.FirstName,
+ 
+ e1.LastName,
+ 
+ e1.Title,
+    
+ e2.FirstName AS subordinatesFirstName,
+    
+ e2.LastName AS subordinatesLastName,
+    
+ e2.Title AS subordinates
+FROM
+    employees e1
+        
+ INNER JOIN
+    employees e2 ON e1.EmployeeID = e2.ReportsTo;
+
+9. Get the Firts Name, Lastn Name, Title of Sales who has the least amount of orders. (Amount of sold products should be also in the result set).
+
+SELECT e.FirstName, e.LastName, e.Title, COUNT(o.OrderID) AS Quantity
+
+FROM orders o
+
+INNER JOIN employees e ON o.EmployeeID = e.EmployeeID
+
+GROUP BY o.EmployeeID
+
+ORDER BY Quantity
+
+LIMIT 1;
+
+
+                                                               SECOND PART
+
+
+
+1) Clone data from the Shippers table to the NewShippers table.
+  
+
+CREATE TABLE NewShippers
+
+AS
+SELECT ShipperID, CompanyName, Phone 
+FROM shippers;
+
+2) Get the list of suppliers which are related to each product name which has price greater than or equal 15$.( Which information about supplier will be present in result set is optional)
+  
+
+SELECT 
+    p.SupplierID, p.ProductName, s.CompanyName, p.UnitPrice
+
+FROM
+    products p
+        
+INNER JOIN
+    suppliers s ON p.SupplierID = s.SupplierID
+
+WHERE
+    p.UnitPrice = 15 OR p.UnitPrice > 15
+
+ORDER BY p.SupplierID;
+
+3) Get the list of total quantities of ordered products which consists of: 
+  total quantity ordered in Germany and the total quantity of products ordered in Sweden. (Result should contain 2 rows)
+  
+
+SELECT 
+    s.Country, SUM(p.UnitsOnOrder) AS Quantity
+
+FROM
+    products p
+        
+INNER JOIN
+    suppliers s ON p.SupplierID = s.SupplierID
+
+WHERE
+    s.Country = 'Germany'
+        OR s.Country = 'Sweden'
+
+GROUP BY s.Country;
+
+4) Find the list of different countries in Employees and Customers tables.
+  
+
+SELECT Country 
+FROM customers
+
+WHERE Country != 'NULL'
+UNION 
+
+SELECT Country 
+FROM employees
+
+WHERE Country != 'NULL'
+
+ORDER BY Country;
+
+5) Find the list of the same Postal Codes between Suppliers and Customers tables.
+  
+
+SELECT c.PostalCode FROM customers c
+
+INNER JOIN suppliers s ON c.PostalCode = s.PostalCode
+
+6) Find the top Region, City and Country from which sales specialists were hired (means who sold the biggest quantity of products).
+  
+
+SELECT e.City, e.Region, e.Country, COUNT(o.EmployeeID) AS Quantity 
+FROM employees e
+
+INNER JOIN orders o ON e.EmployeeID = o.EmployeeID
+
+GROUP BY e.EmployeeID
+
+ORDER BY Quantity DESC
+
+LIMIT 1;
+
+7) Get two lists of products: with a price < 50.00 with a discountinued flag and < 50  without a discountinued flag.
+  
+
+SELECT DISTINCT p.ProductName, p.UnitPrice, o.Discount 
+FROM products p
+INNER JOIN `order details` o ON p.ProductID = o.ProductID
+
+WHERE p.UnitPrice < 50 AND o.Discount > 0
+
+ORDER BY Discount;
+---------
+
+SELECT DISTINCT p.ProductName, p.UnitPrice, o.Discount 
+FROM products p
+INNER JOIN `order details` o ON p.ProductID = o.ProductID
+
+WHERE p.UnitPrice < 50 AND o.Discount = 0
+
+ORDER BY Discount;
+
+8) Create new table NewProducts based on the Products table with only discountinued products. Compare data sets between Products and NewProducts tables. 
+  (Check that only discountinued products are inserted).
+
+
+
+CREATE TABLE NewProducts 
+AS SELECT 
+ ProductID,
+    ProductName,
+    SupplierID,
+    CategoryID,
+    QuantityPerUnit,
+    UnitPrice,
+    
+ UnitsInStock,
+    UnitsOnOrder,
+    ReorderLevel,
+    Discontinued FROM
+    products
+
+WHERE
+    Discontinued = 1;
+
+The 9th query is optional 
+ * Get the list of orders, where a required date is bigger than the Shipped date ( compare in days) and Ship Region is not specified.
+
+SELECT 
+    OrderID,
+    OrderDate,
+    RequiredDate,
+    ShippedDate,
+
+    ShipRegion,
+    DATEDIFF(RequiredDate, ShippedDate) AS Different
+
+FROM
+    orders
+
+WHERE
+    DATEDIFF(RequiredDate, ShippedDate) > 0
+        AND ShipRegion IS NULL;
