@@ -1,0 +1,82 @@
+2022-03-15 17:52:49 INFO  Program:8 - Operation successful
+2022-03-15 17:52:49 WARN  Program:13 - Operation warning
+2022-03-15 17:52:49 DEBUG Program:18 - Debug level log
+2022-03-15 17:52:49 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-15 17:54:45 INFO  Program:8 - Operation successful
+2022-03-15 17:54:45 WARN  Program:13 - Operation warning
+2022-03-15 17:54:45 DEBUG Program:18 - Debug level log
+2022-03-15 17:54:45 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-15 17:55:32 INFO  Program:8 - Operation successful
+2022-03-15 17:55:32 WARN  Program:13 - Operation warning
+2022-03-15 17:55:32 DEBUG Program:18 - Debug level log
+2022-03-15 17:55:32 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-15 17:55:53 INFO  Program:8 - Operation successful
+2022-03-15 17:55:53 WARN  Program:13 - Operation warning
+2022-03-15 17:55:53 DEBUG Program:18 - Debug level log
+2022-03-15 17:55:53 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-15 17:59:59 INFO  Program:8 - Operation successful
+2022-03-15 17:59:59 WARN  Program:13 - Operation warning
+2022-03-15 17:59:59 DEBUG Program:18 - Debug level log
+2022-03-15 17:59:59 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-15 18:02:19 INFO  Program:8 - Operation successful
+2022-03-15 18:02:19 WARN  Program:13 - Operation warning
+2022-03-15 18:02:19 DEBUG Program:18 - Debug level log
+2022-03-15 18:02:19 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-16 07:17:24 INFO  Program:8 - Operation successful
+2022-03-16 07:17:24 WARN  Program:13 - Operation warning
+2022-03-16 07:17:24 DEBUG Program:18 - Debug level log
+2022-03-16 07:17:24 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-16 07:18:05 INFO  Program:8 - Operation successful
+2022-03-16 07:18:05 WARN  Program:13 - Operation warning
+2022-03-16 07:18:05 DEBUG Program:18 - Debug level log
+2022-03-16 07:18:05 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-16 07:34:56 INFO  Program:8 - Operation successful
+2022-03-16 07:34:56 WARN  Program:13 - Operation warning
+2022-03-16 07:34:56 DEBUG Program:18 - Debug level log
+2022-03-16 07:34:56 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-16 07:35:55 INFO  Program:8 - Operation successful
+2022-03-16 07:35:55 WARN  Program:13 - Operation warning
+2022-03-16 07:35:55 DEBUG Program:18 - Debug level log
+2022-03-16 07:35:55 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-16 07:39:20 INFO  Program:8 - Operation successful
+2022-03-16 07:39:20 WARN  Program:13 - Operation warning
+2022-03-16 07:39:20 DEBUG Program:18 - Debug level log
+2022-03-16 07:39:20 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-16 07:40:50 INFO  Program:8 - Operation successful
+2022-03-16 07:40:50 WARN  Program:13 - Operation warning
+2022-03-16 07:40:50 DEBUG Program:18 - Debug level log
+2022-03-16 07:40:50 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-16 07:46:33 INFO  Program:8 - Operation successful
+2022-03-16 07:46:33 WARN  Program:13 - Operation warning
+2022-03-16 07:46:33 DEBUG Program:18 - Debug level log
+2022-03-16 07:46:33 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-18 08:49:37 INFO  Program:8 - Operation successful
+2022-03-18 08:49:37 WARN  Program:13 - Operation warning
+2022-03-18 08:49:37 DEBUG Program:18 - Debug level log
+2022-03-18 08:49:37 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-18 08:50:59 INFO  Program:8 - Operation successful
+2022-03-18 08:50:59 WARN  Program:13 - Operation warning
+2022-03-18 08:50:59 DEBUG Program:18 - Debug level log
+2022-03-18 08:50:59 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-18 08:51:55 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-18 08:52:38 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-18 08:53:48 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-18 09:05:08 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-18 09:06:11 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-18 09:09:42 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-18 09:12:58 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-18 09:18:50 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-18 09:19:50 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-18 09:29:34 INFO  Program:8 - Operation successful
+2022-03-18 09:29:34 WARN  Program:13 - Operation warning
+2022-03-18 09:29:34 DEBUG Program:18 - Debug level log
+2022-03-18 09:29:34 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-18 09:32:27 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-18 09:35:51 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-18 09:45:20 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-18 09:47:59 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-18 09:48:26 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-18 09:49:40 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-18 10:14:16 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-18 10:42:16 ERROR Program:24 - ERROR: You can't dividing by 0
+2022-03-18 10:44:28 ERROR Program:24 - ERROR: You can't dividing by 0
